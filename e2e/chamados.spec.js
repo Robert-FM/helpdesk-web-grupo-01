@@ -1,0 +1,2 @@
+const {test,expect}=require('@playwright/test');
+test('G1 criar pela interface',async({page})=>{await page.goto('/');await page.locator('#solicitante').fill('Davi E2E');await page.locator('#descricao').fill('Falha de teste');await page.getByRole('button',{name:'Abrir chamado'}).click();await expect(page.locator('#mensagem')).toContainText('sucesso');await expect(page.locator('#lista')).toContainText('Davi E2E');});
